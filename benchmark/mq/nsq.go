@@ -16,7 +16,6 @@ type Nsq struct {
 
 func NewNsq(numberOfMessages int, testLatency bool, channeL string) *Nsq {
 	//topic := "0#ephemeral"
-	//topic := "0"	
 	channel := channeL
 //	i, _ := strconv.Atoi(channel)
 	channel += "#ephemeral"
@@ -51,11 +50,6 @@ func NewNsq(numberOfMessages int, testLatency bool, channeL string) *Nsq {
 }
 
 func (n *Nsq) Setup() {
-	//n.sub.AddHandler(nsq.HandlerFunc(func(message *nsq.Message) error {
-		//n.handler.ReceiveMessage(message.Body)
-		//return nil
-	//}))
-	//n.sub.ConnectToNSQD("localhost:4150")
 }
 
 func (n *Nsq) Teardown() {

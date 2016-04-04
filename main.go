@@ -98,7 +98,7 @@ func main() {
 			"[test_latency] [num_messages] [message_size]",
 		os.Args[0])
 
-		for i:=0; i<256; i++ {
+		for i:=0; i<64; i++ {
 			tester := newTester("nsq", true, 10000, 1024, strconv.Itoa(i))
 			if tester == nil {
 				log.Println(usage)
@@ -107,11 +107,8 @@ func main() {
 
 			go tester.Test()
 		}
-		//tester := newTester("nsq", true, 10000, 1024, strconv.Itoa(0))
-		//tester.Test()
-
 		for {
-			time.Sleep(20 * time.Second)	
+			time.Sleep(50 * time.Second)	
 		}
 
 }
