@@ -30,15 +30,11 @@ func (endpoint SendEndpoint) TestThroughput(messageSize int, numberToSend int) {
 func (endpoint SendEndpoint) TestLatency(messageSize int, numberToSend int) {
 	start := time.Now().UnixNano()
 	b := make([]byte, messageSize)
-	for i := 0; i < numberToSend*100; i++ {
+	for i := 0; i < numberToSend; i++ {
 		binary.PutVarint(b, time.Now().UnixNano())
-		//j := int64(i)
-		//binary.PutVarint(b, j)
 		endpoint.MessageSender.Send(b)
-		//time.Sleep(10 * time.Microsecond)
+		time.Sleep(5 * time.Millisecond)
 	}
-	binary.PutVarint(b, int64(0));
-	endpoint.MessageSender.Send(b);
 
 	stop := time.Now().UnixNano()
 	ms := float32(stop-start) / 1000000
