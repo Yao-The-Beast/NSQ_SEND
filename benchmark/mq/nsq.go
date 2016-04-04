@@ -15,11 +15,12 @@ type Nsq struct {
 }
 
 func NewNsq(numberOfMessages int, testLatency bool, channeL string) *Nsq {
-	//topic := "0#ephemeral"
+	topic := "0#ephemeral"
 	channel := channeL
 //	i, _ := strconv.Atoi(channel)
 	channel += "#ephemeral"
-	topic := channel
+	
+//	topic := channel
 
 	config := nsq.NewConfig()
 	config.MaxInFlight = 2000
