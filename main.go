@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
-//	"strconv"
+	"strconv"
 	"time"
 
 	"github.com/tylertreat/NSQ_SEND/benchmark"
