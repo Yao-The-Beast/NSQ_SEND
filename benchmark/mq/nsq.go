@@ -15,10 +15,11 @@ type Nsq struct {
 }
 
 func NewNsq(numberOfMessages int, testLatency bool, channeL string) *Nsq {
-	topic := "0#ephemeral"
+//	topic := "0#ephemeral"
+	topic = "0";
 	channel := channeL
 //	i, _ := strconv.Atoi(channel)
-	channel += "#ephemeral"
+//	channel += "#ephemeral"
 	
 //	topic := channel
 
