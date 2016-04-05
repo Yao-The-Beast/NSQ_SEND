@@ -24,7 +24,7 @@ func NewNsq(numberOfMessages int, testLatency bool, channeL string) *Nsq {
 //	topic := channel
 
 	config := nsq.NewConfig()
-	config.MaxInFlight = 2000
+	config.MaxInFlight = 10
     
     pub, _ := nsq.NewProducer("localhost:4150", config)
 //	if i >= 128 {
